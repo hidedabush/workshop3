@@ -6,11 +6,19 @@
 #include "camera.h"
 #include "sphere.h"
 
-// Renders one frame into d_fb, which must be DEVICE memory holding
-// width * height unsigned ints. Each pixel is packed 0x00RRGGBB, which is
-// exactly the layout a 32-bit Windows DIB expects.
+// Render a frame by launching CUDA kernels to trace rays and produce pixels.
 //
-// Row 0 is the TOP row of the window.
+// Parameters:
+//   d_fb      - GPU (device) memory: array of width*height unsigned ints, each a pixel.
+//               Pixel format: 0x00RRGGBB (Alpha=0, Red, Green, Blue as 8-bit components).
+//               This format matches Windows DIB (Device Independent Bitmap) expectations.
+//   width     - Image width in pixels
+//   height    - Image height in pixels
+//   cam       - Camera specifying view origin and image plane
+//   scene     - Scene containing spheres and lighting
+//
+// Memory layout: pixels are stored row-major, with row 0 being the TOP of the window
+// (this is the standard Windows top-down bitmap order).
 void renderFrame(unsigned int* d_fb, int width, int height,
                  const Camera& cam, const Scene& scene);
 
