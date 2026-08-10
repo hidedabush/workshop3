@@ -20,8 +20,8 @@
 // ---------------------------------------------------------------------------
 // Application state — window and rendering configuration
 // ---------------------------------------------------------------------------
-static int  g_width   = 960;          // Window client area width in pixels
-static int  g_height  = 540;          // Window client area height in pixels
+static int  g_width   = 1100;          // Window client area width in pixels
+static int  g_height  = 800;          // Window client area height in pixels
 static bool g_running = true;         // False when user closes window
 static bool g_resized = true;         // True when window is resized; triggers buffer reallocation
 

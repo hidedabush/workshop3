@@ -1,10 +1,10 @@
-// renderer.cu — the actual ray tracer. One CUDA thread per pixel.
+// renderersolution.cu — Complete solution for ray tracing renderer
 
 #include <cstdio>
 
 #include "renderer.h"
 #include "vec3.h"
-#include "ray.h"
+#include "raysolution.h"  // Use solution version
 #include "sphere.h"
 #include "camera.h"
 
